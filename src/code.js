@@ -1,52 +1,65 @@
 var zvukTrenutnoPusten = false;
 
-const zivotinjeInformacije = [{
+const zemljeInformacije = [{
         lokacijaAudioFajla: './animal_sounds/cow-moo.wav',
-        opisZivotinje: 'Krava je domaca zivotinja braon-bele ili crno-bele boje i daje mleko'
+        opisZemlje: 'Madjarska, glavni grad: Budimpesta, broj stanovnika: 9,75 miliona'
     },
     {
         lokacijaAudioFajla: './animal_sounds/cat-meow.wav',
-        opisZivotinje: 'Macka je mala zivotinja, lovi miseve i pije mleko'
+        opisZemlje: 'Rumunija, glavni grad: Bukurest, broj stanovnika: 19,3 miliona'
     },
     {
         lokacijaAudioFajla: './animal_sounds/dog-sound.wav',
-        opisZivotinje: 'Pas laje, voli da se igra, covekov najbolji prijatelj'
+        opisZemlje: 'Bugarska, glavni grad: Sofija, broj stanovnika: 6,9 miliona'
     },
     {
         lokacijaAudioFajla: './animal_sounds/bear-sound.mp3',
-        opisZivotinje: 'Medved je veliki, jede mnogo, a popularan je ljubimac u Rusiji',
+        opisZemlje: 'Hrvatska, glavni grad: Zagreb, broj stanovnika: 4 miliona',
     },
     {
         lokacijaAudioFajla: './animal_sounds/horse-sound.wav',
-        opisZivotinje: 'Konj je plemenita zivotinja, jak',
+        opisZemlje: 'Srbija, glavni grad: Beograd, broj stanovnika: 6,9 miliona',
     },
     {
         lokacijaAudioFajla: './animal_sounds/rooster-sound.mp3',
-        opisZivotinje: 'Pevac kukurice rano ujutru, voli da zaokupi decu'
+        opisZemlje: 'Bosna, glavni grad: Sarajevo, broj stanovnika: 3,2 miliona'
+    },
+    {
+        lokacijaAudioFajla: './animal_sounds/rooster-sound.mp3',
+        opisZemlje: 'Crna Gora, glavni grad: Podgorica, broj stanovnika: 0,62 miliona'
+    },
+    {
+        lokacijaAudioFajla: './animal_sounds/rooster-sound.mp3',
+        opisZemlje: 'Albanija, glavni grad: Tirana, broj stanovnika: 2,8 miliona'
+    },
+    {
+        lokacijaAudioFajla: './animal_sounds/rooster-sound.mp3',
+        opisZemlje: 'Makedonija, glavni grad: Skoplje, broj stanovnika: 2 miliona'
     }
 ];
 
-// const images = document.querySelectorAll('img');
-// images.forEach((image, idx) => {
-//     // za svaku sliku pusti audio kad se predje misom
-//     image.addEventListener('mouseover', () => {
-//         playAudio(zivotinjeInformacije[idx].lokacijaAudioFajla);
-//     });
+const images = document.querySelectorAll('img');
+const descriptions = document.querySelectorAll('article>h1');
+images.forEach((image, idx) => {
+    // za svaku sliku pusti audio kad se predje misom
+    image.addEventListener('mouseover', () => {
+        playAudio(zemljeInformacije[idx].lokacijaAudioFajla);
+    });
 
-//     // za klik izbaci opis
-//     image.addEventListener('click', () => {
-//         alert(zivotinjeInformacije[idx].opisZivotinje);
-//     });
-// });
+    // za klik izbaci opis
+    descriptions[idx].addEventListener('click', () => {
+        alert(zemljeInformacije[idx].opisZemlje);
+    });
+});
 
-// function playAudio(audioPath) {
-//     // proveri da li se trenutno emituje neki zvuk
-//     if (zvukTrenutnoPusten === false) {
-//         const audio = new Audio(audioPath);
-//         audio.play();
-//         zvukTrenutnoPusten = true;
-//         audio.onended = () => {
-//             zvukTrenutnoPusten = false;
-//         };
-//     }
-// }
+function playAudio(audioPath) {
+    // proveri da li se trenutno emituje neki zvuk
+    if (zvukTrenutnoPusten === false) {
+        const audio = new Audio(audioPath);
+        audio.play();
+        zvukTrenutnoPusten = true;
+        audio.onended = () => {
+            zvukTrenutnoPusten = false;
+        };
+    }
+}
