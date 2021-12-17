@@ -4,8 +4,8 @@
 
 body {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
     background-image: url(../images/mapaBalkana.jfif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,10 +13,16 @@ body {
 }
 
 main {
-    align-self: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+.image-container {
+    min-width: 32%;
+    max-width: 33%;
+    flex: 1;
 }
 
 footer {
@@ -35,4 +41,20 @@ a {
 a:visited {
     color: white;
     text-decoration: none;
+}
+
+@media(max-width: 1201px) {
+    .image-container {
+        max-width: 45%;
+    }
+}
+
+@media(max-width: 721px) {
+    .image-container {
+        min-width: 100%;
+        align-self: center;
+    }
+    img {
+        width: 90%;
+    }
 }
