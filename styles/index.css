@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../images/mapaBalkana.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 97vh;
+}
+
+main {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
